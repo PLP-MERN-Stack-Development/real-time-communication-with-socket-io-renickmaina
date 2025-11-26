@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #000000;
+}
+
+@layer base {
+  html {
+    @apply min-h-full bg-black antialiased;
+  }
+
+  body {
+    @apply min-h-screen text-white;
+    background: linear-gradient(
+      135deg,
+      #833ab4,  /* deep purple */
+      #fd1d1d,  /* pink/red */
+      #fcb045   /* orange/yellow */
+    );
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+  }
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(253, 29, 29, 0.6); /* Instagram pink/red */
+  border-radius: 9999px;
+}
+
+.custom-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(253, 29, 29, 0.6) transparent;
+}
